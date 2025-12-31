@@ -1,0 +1,5 @@
+torch>=2.0.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+ipywidgets>=8.0.0
+networkx>=3.0
