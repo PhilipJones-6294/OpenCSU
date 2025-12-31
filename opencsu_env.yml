@@ -1,0 +1,35 @@
+# ==============================================================================
+# OPENCSU ENVIRONMENT - GRACE HOPPER / ARM64 OPTIMIZED
+# ==============================================================================
+name: opencsu_torch
+channels:
+  - pytorch-nightly  # Primary source for ARM64 + CUDA builds
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # --- CORE RUNTIME ---
+  - python=3.11
+  - numpy=1.26.4
+  
+  # --- DEEP LEARNING (Standard Pytorch) ---
+  # WE REMOVED 'pytorch-cuda=12.1'. 
+  # The nightly channel will automatically pull the correct aarch64 build.
+  - pytorch
+  - torchvision
+  - torchaudio
+  
+  # --- OPENCSU DEPENDENCIES ---
+  - matplotlib
+  - scipy
+  - tqdm
+  - ipywidgets
+  - networkx
+  - requests
+  - git-lfs
+
+  # --- PIP FALLBACKS ---
+  - pip
+  - pip:
+    - jupyterlab
